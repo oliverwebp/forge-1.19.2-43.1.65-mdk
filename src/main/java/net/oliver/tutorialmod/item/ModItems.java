@@ -1,5 +1,6 @@
 package net.oliver.tutorialmod.item;
 
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,6 +14,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ZIRCON = ITEMS.register("zircon",
             ()-> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> ELFBAR = ITEMS.register("elfbar",
+            ()-> new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB).food(ModFood.ELFBAR)));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
