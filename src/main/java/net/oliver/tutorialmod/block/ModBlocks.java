@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.oliver.tutorialmod.TutorialMod;
+import net.oliver.tutorialmod.block.custom.LampBlock;
 import net.oliver.tutorialmod.item.ModCreativeModeTab;
 import net.oliver.tutorialmod.item.ModItems;
 
@@ -19,9 +20,13 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TutorialMod.MOD_ID);
 
-    public static final RegistryObject<Block> ZIRCON_BLOCK = registerBlock("zircon_block", () ->
+    public static final RegistryObject<Block>   ZIRCON_BLOCK = registerBlock("zircon_block", () ->
             new Block(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block>   LAMP_BLOCK = registerBlock("lamp_block", () ->
+            new LampBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(LampBlock.LIT) ? 15: 0)), ModCreativeModeTab.TUTORIAL_TAB);
     private static <T extends Block> RegistryObject<T>  registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);

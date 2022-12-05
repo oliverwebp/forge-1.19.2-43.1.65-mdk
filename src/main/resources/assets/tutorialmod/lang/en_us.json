@@ -5,5 +5,8 @@
 
   "block.tutorialmod.zircon_block": "Block of Zircon",
 
-  "item.tutorialmod.elfbar": "Elf Bar"
+  "item.tutorialmod.elfbar": "Elf Bar",
+
+  "item.tutorialmod.eight_ball": "Eight Ball",
+  "block.tutorialmod.lamp_block": "Lamp Block"
 }
