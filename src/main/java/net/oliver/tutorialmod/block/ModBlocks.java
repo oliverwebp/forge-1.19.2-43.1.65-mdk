@@ -4,6 +4,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.oliver.tutorialmod.TutorialMod;
 import net.oliver.tutorialmod.block.custom.LampBlock;
+import net.oliver.tutorialmod.block.custom.ZazaBlock;
 import net.oliver.tutorialmod.item.ModCreativeModeTab;
 import net.oliver.tutorialmod.item.ModItems;
 
@@ -27,6 +29,8 @@ public class ModBlocks {
             new LampBlock(BlockBehaviour.Properties.of(Material.STONE).strength(6f)
                     .requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(LampBlock.LIT) ? 15: 0)), ModCreativeModeTab.TUTORIAL_TAB);
+    public static final RegistryObject<Block>   ZAZA_BLOCK = BLOCKS.register("zaza_block", () ->
+            new ZazaBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
     private static <T extends Block> RegistryObject<T>  registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);

@@ -8,5 +8,8 @@
   "item.tutorialmod.elfbar": "Elf Bar",
 
   "item.tutorialmod.eight_ball": "Eight Ball",
-  "block.tutorialmod.lamp_block": "Lamp Block"
+  "block.tutorialmod.lamp_block": "Lamp Block",
+  "block.tutorialmod.zaza_block": "Zaza Crop",
+  "item.tutorialmod.zaza_seed": "Zaza Seed",
+  "item.tutorialmod.zaza": "Zaza"
 }
